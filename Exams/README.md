@@ -129,9 +129,11 @@ _Storage_: virtualizzazione dello storage per gestire e consolidare lo spazio di
 
 **_Spiegazione_** : NTP sta per Network Time Protocol ed è il protocollo utilizzato per la sincronizzazione degli orologi di sistema sui computer in una rete.
 
-## Esami 2020
+## Esami 2023
 
-### Esame 1 (20/01/2020)
+### Esame 1 (29/05/2023)
+
+
 
 
 
