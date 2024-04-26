@@ -1,38 +1,53 @@
-#stampa "CIAO" : 
-echo CIAO 
+#!/bin/bash
+# Exercises on bash
 
-#stampa i primi 100 numeri facendo i = i + 2 : 
-i=1
-while [ $i -le 100 ]
-do
-echo $i
-((i = $i + 2))
-done
+print_numbers() {
+  local i=1  # create local variable
+  local limit=50
+  while [ $i -le $limit ]  # go until the value of i is more than 100
+  do
+    printf "%s " "$i"
+    # shellcheck disable=SC2004
+    ((i = $i + 2))
+  done
+  # shellcheck disable=SC2028
+  printf "\n"
+}
 
-#prende input da tastiera e stampa "Benvenuto -name-" : 
-read name
-echo Benvenuto $name
 
-#stampare i primi n numeri con un ciclo seq da num1 a num2 (2 interi)
-seq num1 num2
+getCurrentDate() {  #prints the current date "limit" times
+  local count=0
+  local limit=5
+  while true
+  do
+    (count++)
+    date;
+    sleep 1
+    if [ "$count" -eq $limit ]; then
+      break
+    fi
+  done
+}
 
-#prende in input 2 interi e stampa : la loro somma, differenza, prodotto e divisione
-read n1   #potrei anche mettere read n1 n2 e scrivere i due numeri sulla stessa linea divisi da uno spazio
-read n2
-echo $[n1 + n2]
-echo $[n1 - n2]
-echo $[n1 * n2]
-echo $[n1 / n2]
+printFileWeight() {
+  # shellcheck disable=SC2045
+  for i in $(ls -1);
+  do
+    du -hs "$i";
+  done;
+}
 
-#prende 2 interi come input e stampa se il primo numero è maggiore / minore / uguale al secondo 
-read x
-read y
-if (($x > $y))
-then
-echo $x is greater than $y
-elif (($x < $y))
-then
-echo $x is less than $y
-else
-echo $x is equal to $y
-fi
+chooseLetter() {
+  # shellcheck disable=SC2154
+  case $1 in
+    'D') date;;
+    'W') who;;
+    'L') find . -maxdepth 1 -exec ls -l {} + | more;; # we could use also :  'L') ls -l | more;;
+    'P') pwd;;
+    *)
+  echo 'D = current date'
+  echo 'W = connected users'
+  echo 'L = file list'
+  echo 'P = current directory';;
+  esac
+}
