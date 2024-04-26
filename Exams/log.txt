@@ -1,0 +1,11 @@
+4.0K	mioscript.sh
+ 12K	./.DS_Store
+  0B	./.localized
+4.0K	./log.txt
+1.2M	./Screenshot 2024-03-09 at 20.55.13.png
+4.0K	./mioscript.sh
+ 12K	./.DS_Store
+  0B	./.localized
+4.0K	./log.txt
+1.2M	./Screenshot 2024-03-09 at 20.55.13.png
+4.0K	./mioscript.sh
