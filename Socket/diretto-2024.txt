@@ -1,0 +1,15 @@
+$TTL    604800
+$ORIGIN	.
+@       IN      SOA     las.localdomain. admin.localdomain. (
+                        2024032601      ; seriale, indica la versione,di solito si mette la data di modifica in formato aaaa/mm/gg                                                               ; più un incrementale
+                        604800          ; Refresh
+                        86400         ; Retry
+                        2419200         ; Expire
+                        604800 )       ; Negative Cache TTL
+
+; name servers - NS records
+        IN      NS      las.localdomain.
+; IN      NS      las2.localdomain.                                                                                     
+; name servers - A records
+<vostropc>                 A      192.168.64.129 ; ricordatevi l'ip del pc hp.
+                                                                              
